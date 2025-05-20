@@ -1,0 +1,13 @@
+# Application Name
+spring.application.name=badminton
+
+# Database Configuration
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA/Hibernate Common Properties
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.default_schema=badminton
+spring.jpa.properties.hibernate.format_sql=true 
