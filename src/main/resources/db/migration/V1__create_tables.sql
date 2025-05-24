@@ -21,3 +21,9 @@ CREATE TABLE IF NOT EXISTS badminton.game (
     CONSTRAINT fk_game_player1 FOREIGN KEY (player1) REFERENCES badminton.user(id),
     CONSTRAINT fk_game_player2 FOREIGN KEY (player2) REFERENCES badminton.user(id)
 );
+
+-- Insert initial users
+INSERT INTO badminton.user (id, name, username) VALUES 
+(1, 'Bera', 'BeraOctet'),
+(2, 'Walid', 'Drodo'),
+(3, 'Tahir', 'tbashir');
