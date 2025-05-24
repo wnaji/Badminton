@@ -25,6 +25,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         if (securityEnabled) {
             http
+                .cors()
+                .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/**").authenticated()
@@ -32,6 +34,8 @@ public class SecurityConfig {
                 .addFilterBefore(new ApiKeyAuthFilter(apiKeyHeader, apiKeyValue), BasicAuthenticationFilter.class);
         } else {
             http
+                .cors()
+                .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .anyRequest().permitAll();
